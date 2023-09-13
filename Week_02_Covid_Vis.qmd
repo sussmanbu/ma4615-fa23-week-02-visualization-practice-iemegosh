@@ -41,7 +41,8 @@ covid_data_count |>
 covid_data_long |> 
   ggplot(aes(x = race, fill = count_type)) +
   geom_bar(position = "fill") + 
-  labs(title = "Covid Cases, Deaths, Hospitalizations, and Tests by Race", x = "Race", y = "")
+  labs(title = "Covid Cases, Deaths, Hospitalizations, and Tests by Race", x = "Race", y = "") +
+  theme(legend.title = element_blank())
 ```
 2. Are there any conclusions you can draw?
 One conclusion to draw from this plot is although Latinx Americans had the least amount of cases proportionally to other races, they had approximately the same death rate as other racial groups.
