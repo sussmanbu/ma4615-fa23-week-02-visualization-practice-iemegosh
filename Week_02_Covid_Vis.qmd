@@ -1,7 +1,7 @@
 ---
 title: "Week 02: COVID Visualization Activity"
 date: "September, 11 2023"
-author: "**`[[`**Your Name**`]]`**"
+author: "Isabelle Megosh"
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -21,7 +21,7 @@ Try using the different data sets and see which ones are good for making which p
 
 
 ```{r first_plot}
-ggplot(covid_data_count, aes(x = date, y = Cases)) + geom_point()
+ggplot(covid_data_count, aes(x = date, y = Cases))+ geom_point()
 ```
 
 
@@ -36,6 +36,16 @@ covid_data_count |>
 ```
 
 1. Write code for a plot and describe what you observe?
+
+```{r}
+covid_data_long |> 
+  ggplot(aes(x = race, fill = count_type)) +
+  geom_bar(position = "fill") + 
+  labs(title = "Covid Cases, Deaths, Hospitalizations, and Tests by Race", x = "Race", y = "")
+```
 2. Are there any conclusions you can draw?
+One conclusion to draw from this plot is although Latinx Americans had the least amount of cases proportionally to other races, they had approximately the same death rate as other racial groups.
 3. What were you not able to do due to not having the R knowledge?
+It is difficult to compare the different racial groups when each count_type does not start at the same level. Essentially, it's unclear which proporation is larger than the other. I don't know how to split the plot into four groups that would show each proportion individually.
 4. What other data would be useful to better understand this data?
+It would be useful to know when vaccines were distributed to each state and/or racial group.
